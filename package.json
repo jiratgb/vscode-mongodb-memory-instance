@@ -2,7 +2,7 @@
   "name": "vscode-mongodb-memory-instance",
   "displayName": "MongoDB Memory Instance",
   "description": "VS Code exetension to create a MongoDB memory server instance",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "engines": {
     "vscode": "^1.63.0"
   },
@@ -19,21 +19,21 @@
         "command": "vscode-mongodb-memory-instance.start",
         "title": "Start MongoDB instance"
       },
-			{
+      {
         "command": "vscode-mongodb-memory-instance.stop",
         "title": "Stop MongoDB instance"
       }
     ],
-		"configuration": {
-			"title": "MongoDB Memory Instance",
-			"properties": {
-				"mongodbMemoryInstance.mongoVersion": {
-					"type": "string",
-					"default": null,
-					"description": "MongoDB version"
-				}
-			}
-		}
+    "configuration": {
+      "title": "MongoDB Memory Instance",
+      "properties": {
+        "mongodbMemoryInstance.mongoVersion": {
+          "type": "string",
+          "default": null,
+          "description": "MongoDB version"
+        }
+      }
+    }
   },
   "scripts": {
     "vscode:prepublish": "yarn run compile",
