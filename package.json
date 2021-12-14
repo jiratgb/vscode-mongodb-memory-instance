@@ -2,7 +2,7 @@
   "name": "vscode-mongodb-memory-instance",
   "displayName": "MongoDB Memory Instance",
   "description": "VS Code exetension to create a MongoDB memory server instance",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "publisher": "jiratb",
   "engines": {
     "vscode": "^1.63.0"
