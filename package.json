@@ -3,6 +3,7 @@
   "displayName": "MongoDB Memory Instance",
   "description": "VS Code exetension to create a MongoDB memory server instance",
   "version": "1.0.0",
+  "publisher": "jiratb",
   "engines": {
     "vscode": "^1.63.0"
   },
@@ -12,14 +13,23 @@
   "activationEvents": [
     "*"
   ],
+  "extensionKind": [
+    "workspace"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jiratgb/vscode-mongodb-memory-instance"
+  },
   "main": "./out/extension.js",
   "contributes": {
     "commands": [
       {
+        "category": "MongoDB Memory Instance",
         "command": "vscode-mongodb-memory-instance.start",
         "title": "Start MongoDB instance"
       },
       {
+        "category": "MongoDB Memory Instance",
         "command": "vscode-mongodb-memory-instance.stop",
         "title": "Stop MongoDB instance"
       }
