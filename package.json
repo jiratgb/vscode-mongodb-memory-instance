@@ -1,45 +1,62 @@
 {
   "name": "vscode-mongodb-memory-instance",
-	"displayName": "MongoDB Memory Instance",
-	"description": "VS Code exetension to create a MongoDB memory server instance",
-	"version": "0.0.1",
-	"engines": {
-		"vscode": "^1.63.0"
-	},
-	"categories": [
-		"Other"
-	],
-	"activationEvents": [
-        "onCommand:vscode-mongodb-memory-instance.helloWorld"
-	],
-	"main": "./out/extension.js",
-	"contributes": {
-		"commands": [
+  "displayName": "MongoDB Memory Instance",
+  "description": "VS Code exetension to create a MongoDB memory server instance",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.63.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "*"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "vscode-mongodb-memory-instance.start",
+        "title": "Start MongoDB instance"
+      },
 			{
-				"command": "vscode-mongodb-memory-instance.helloWorld",
-				"title": "Hello World"
+        "command": "vscode-mongodb-memory-instance.stop",
+        "title": "Stop MongoDB instance"
+      }
+    ],
+		"configuration": {
+			"title": "MongoDB Memory Instance",
+			"properties": {
+				"mongodbMemoryInstance.mongoVersion": {
+					"type": "string",
+					"default": null,
+					"description": "MongoDB version"
+				}
 			}
-		]
-	},
-	"scripts": {
-		"vscode:prepublish": "yarn run compile",
-		"compile": "tsc -p ./",
-		"watch": "tsc -watch -p ./",
-		"pretest": "yarn run compile && yarn run lint",
-		"lint": "eslint src --ext ts",
-		"test": "node ./out/test/runTest.js"
-	},
-	"devDependencies": {
-		"@types/vscode": "^1.63.0",
-		"@types/glob": "^7.1.4",
-		"@types/mocha": "^9.0.0",
-		"@types/node": "14.x",
-		"@typescript-eslint/eslint-plugin": "^5.1.0",
-		"@typescript-eslint/parser": "^5.1.0",
-		"eslint": "^8.1.0",
-		"glob": "^7.1.7",
-		"mocha": "^9.1.3",
-		"typescript": "^4.4.4",
-		"@vscode/test-electron": "^1.6.2"
-	}
+		}
+  },
+  "scripts": {
+    "vscode:prepublish": "yarn run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "yarn run compile && yarn run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/glob": "^7.1.4",
+    "@types/mocha": "^9.0.0",
+    "@types/node": "14.x",
+    "@types/vscode": "^1.63.0",
+    "@typescript-eslint/eslint-plugin": "^5.1.0",
+    "@typescript-eslint/parser": "^5.1.0",
+    "@vscode/test-electron": "^1.6.2",
+    "eslint": "^8.1.0",
+    "glob": "^7.1.7",
+    "mocha": "^9.1.3",
+    "typescript": "^4.4.4"
+  },
+  "dependencies": {
+    "mongodb-memory-server-core": "^8.0.4"
+  }
 }
